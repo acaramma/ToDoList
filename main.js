@@ -1,28 +1,30 @@
 //bottone chiudi e spunta
 var lista_nodi = document.getElementsByTagName("li");
 for (var i = 0; i < lista_nodi.length; i++) {
-  var span = document.createElement("span");
+  var div = document.createElement("div");                            //ho aggiunto 
+  div.className = "div_chiudi";                                       //queste 2
+  var button = document.createElement("button");
   var txt = document.createTextNode("\u00D7");
-  span.className = "Chiudi";
-  span.appendChild(txt);
-  lista_nodi[i].appendChild(span);
+  button.className = "Chiudi";
+  button.appendChild(txt);
+  lista_nodi[i].appendChild(button);
 
-  var span2 = document.createElement("span");
+  var button2 = document.createElement("button");
   var txt2 = document.createTextNode("\u2713");
-  span2.className = "Spunta";
-  span2.appendChild(txt2);
-  lista_nodi[i].appendChild(span2);
+  button2.className = "Spunta";
+  button2.appendChild(txt2);
+  lista_nodi[i].appendChild(button2);
 }
 
 var chiudi = document.getElementsByClassName("Chiudi");
 for (var i = 0; i < chiudi.length; i++) {
   chiudi[i].onclick = function() {
-    li.parentNode.removeChild(li);
+    var div = this.parentElement;
+    div.style.display = "none";
   }
 }
 
-
-// aggiungi task
+// aggiungi tasks
 function aggiungi() {
   var li = document.createElement("li");
   var testo_input = document.getElementById("input").value;
@@ -35,17 +37,18 @@ function aggiungi() {
   }
  	document.getElementById("input").value = "";			
 
-  var span = document.createElement("span");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "Chiudi";
-  span.appendChild(txt);
-  li.appendChild(span);
 
-  var span2 = document.createElement("span");
+  var button = document.createElement("button");
+  var txt = document.createTextNode("\u00D7");
+  button.className = "Chiudi";
+  button.appendChild(txt);
+  li.appendChild(button);
+
+  var button2 = document.createElement("button");
   var txt2 = document.createTextNode("\u2713");
-  span2.className = "Spunta";
-  span2.appendChild(txt2);
-  li.appendChild(span2);
+  button2.className = "Spunta";
+  button2.appendChild(txt2);
+  li.appendChild(button2);
 
   for (i = 0; i < chiudi.length; i++) {
     chiudi[i].onclick = function() {
