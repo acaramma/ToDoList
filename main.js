@@ -1,8 +1,9 @@
 //bottone chiudi e spunta
 var lista_nodi = document.getElementsByTagName("li");
 for (var i = 0; i < lista_nodi.length; i++) {
-  var div = document.createElement("div");                            //ho aggiunto 
-  div.className = "div_chiudi";                                       //queste 2
+  var div_chiudi = document.createElement("div");                     //ho aggiunto 
+  div_chiudi.className = "div_chiudi";                                       //queste 2
+  document.getElementById("Lista").appendChild(div);                  //assd
   var button = document.createElement("button");
   var txt = document.createTextNode("\u00D7");
   button.className = "Chiudi";
@@ -20,11 +21,11 @@ var chiudi = document.getElementsByClassName("Chiudi");
 for (var i = 0; i < chiudi.length; i++) {
   chiudi[i].onclick = function() {
     var div = this.parentElement;
-    div.style.display = "none";
+    item.parentNode.removeChild(item);
   }
 }
 
-// aggiungi tasks
+// aggiungi task
 function aggiungi() {
   var li = document.createElement("li");
   var testo_input = document.getElementById("input").value;
@@ -53,7 +54,7 @@ function aggiungi() {
   for (i = 0; i < chiudi.length; i++) {
     chiudi[i].onclick = function() {
       var div = this.parentElement;
-      div.style.display = "none";
+      item.parentNode.removeChild(div);
     }
   }
 }
