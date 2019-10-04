@@ -20,16 +20,24 @@
   border: 3px;
   border-color: black;
 }
-
-.chiudi {
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 12px 16px 12px 16px;
+.Chiudi{
+  margin-left: 100px;
+  font-size: 30px;
 }
 
-.chiudi:hover {
-  background-color: #f44336;
+.Chiudi:hover {
+  background-color: red;
+  color: white;
+  cursor: pointer;
+}
+
+.Spunta{
+  margin-left: 100px;
+  font-size: 30px;
+}
+
+.Spunta:hover {
+  background-color: green;
   color: white;
   cursor: pointer;
 }
