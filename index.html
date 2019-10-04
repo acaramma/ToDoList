@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ToDo List</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+	<body>
+	<div id="intero">
+		<div class="titolo">
+			<h1>ToDo List</h1>
+		</div>
+		<div class="sottotitolo">
+			<p>Inserisci una task</p>
+		</div>
+		<div class="testo_utente">
+			<input type="text" id="input" placeholder="Testo...">
+	 		<span onclick="aggiungi()" class="Aggiungi">Aggiungi</span>
+		</div>
+		<div class="testo_lista">
+			<p>Lista di task:</p>
+		</div>
+		<div class="task">
+			<ol id="Lista" type="1">
+	  
+			</ol>
+		</div>
+	</div>
+	<script>
+			//bottone chiudi
+			var lista_nodi = document.getElementsByTagName("li");
+			var i;
+			for (i = 0; i < lista_nodi.length; i++) {
+			  var span = document.createElement("span");
+			  var txt = document.createTextNode("\u00D7");
+			  span.className = "close";
+			  span.appendChild(txt);
+			  lista_nodi[i].appendChild(span);
+			}
+
+			var chiudi = document.getElementsByClassName("Chiudi");
+			var i;
+			for (i = 0; i < chiudi.length; i++) {
+			  chiudi[i].onclick = function() {
+			    var div = this.parentElement;
+			    div.style.display = "none";
+			  }
+			}
+
+			// aggiungi task
+			function aggiungi() {
+			  var li = document.createElement("li");
+			  var testo_input = document.getElementById("input").value;
+			  var t = document.createTextNode(testo_input);
+			  li.appendChild(t);
+			  if (testo_input === '') {
+			    alert("Il campo e' obbligatorio");
+			  } else {
+			    document.getElementById("Lista").appendChild(li);
+			  }
+			 	document.getElementById("input").value = "";			
+
+			 var span = document.createElement("span");
+			  var txt = document.createTextNode("\u00D7");
+			  span.className = "Chiudi";
+			  span.appendChild(txt);
+			  li.appendChild(span);
+
+			  for (i = 0; i < chiudi.length; i++) {
+			    chiudi[i].onclick = function() {
+			      var div = this.parentElement;
+			      div.style.display = "none";
+			    }
+			  }
+			}
+	</script>
+	</body>
+</html>

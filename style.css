@@ -1,0 +1,35 @@
+#input {
+  margin: 10px;
+  width: max-content;
+  font-size: 20px;
+}
+
+.Aggiungi {
+  background: #d9d9d9;
+  color: #555;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.7s;
+}
+
+.testo_utente {
+  display: flex;
+  justify-content: flex-start
+  padding: 10px;
+  font-size: 16px;
+  border: 3px;
+  border-color: black;
+}
+
+.chiudi {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.chiudi:hover {
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+}
