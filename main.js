@@ -17,10 +17,10 @@ for (var i = 0; i < lista_nodi.length; i++) {
 var chiudi = document.getElementsByClassName("Chiudi");
 for (var i = 0; i < chiudi.length; i++) {
   chiudi[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
+    li.parentNode.removeChild(li);
   }
 }
+
 
 // aggiungi task
 function aggiungi() {

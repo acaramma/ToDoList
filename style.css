@@ -1,22 +1,41 @@
+#container{
+  width: 100%;
+  height: 100%;
+}
+
+.titolo{
+  text-align: center;
+}
+
+.sottotitolo{
+  margin: 10px;
+  font-size: 25px;
+}
+
 #input {
   margin: 10px;
   width: max-content;
-  font-size: 20px;
+  font-size: 25px;
+}
+
+.li{
+  font-size: 30px;
 }
 
 .Aggiungi {
   background: #d9d9d9;
-  color: #555;
+  width: 250px;
+  height: 50px;
   text-align: center;
+  font-size: 40px;
   cursor: pointer;
-  transition: 0.7s;
 }
 
 .testo_utente {
   display: flex;
-  justify-content: flex-start
+  justify-content: space-between;
   padding: 10px;
-  font-size: 16px;
+  font-size: 20px;
   border: 3px;
   border-color: black;
 }
@@ -40,4 +59,12 @@
   background-color: green;
   color: white;
   cursor: pointer;
+}
+
+.testo_lista{
+  margin: 10px;
+}
+
+.checked{
+  text-decoration: line-through;
 }
