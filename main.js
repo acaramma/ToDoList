@@ -1,9 +1,9 @@
-//bottone chiudi e spunta
+/*//bottone chiudi e spunta
 var lista_nodi = document.getElementsByTagName("li");
 for (var i = 0; i < lista_nodi.length; i++) {
-  var div_chiudi = document.createElement("div");                     //ho aggiunto 
-  div_chiudi.className = "div_chiudi";                                //queste 
-  document.getElementById("Lista").appendChild(div);                  //3
+  var div_chiudi = document.createElement("div");                     
+  div_chiudi.className = "div_chiudi";                                 
+  document.getElementById("Lista").appendChild(div);                  
   var button = document.createElement("button");
   var txt = document.createTextNode("\u00D7");
   button.className = "Chiudi";
@@ -25,12 +25,13 @@ for (var i = 0; i < chiudi.length; i++) {
   }
 }
 
-// aggiungi task
+// aggiungi task, bottone e spunta
 function aggiungi() {
   var li = document.createElement("li");
   var testo_input = document.getElementById("input").value;
   var t = document.createTextNode(testo_input);
   li.appendChild(t);
+
   if (testo_input === '') {
     alert("Il campo e' obbligatorio");
   } else {
@@ -57,4 +58,40 @@ function aggiungi() {
     }
   }
 
+  
+}*/
+
+
+
+ function aggiungi() {
+      //crea div
+      var div = document.createElement('div');
+      div.className = "task";
+      div.innerHTML = document.getElementById('input').textContent;
+      var container = document.getElementById('container');
+      container.appendChild(div);
+
+      //crea task
+      var testo_input = document.getElementById("input").value;
+      div.innerHTML = "<span>" + testo_input + "</span>";   
+    
+    
+
 }
+   /*
+    if (testo_input === '') {
+      alert("Il campo e' obbligatorio");
+    } else {
+      document.getElementsByClassName("task1").appendChild(theDiv);
+    }
+
+    var button = document.createElement("button");
+    var txt = document.createTextNode("\u00D7");
+    button.className = "Chiudi";
+    button.appendChild(txt);
+
+    var button2 = document.createElement("button");
+    var txt2 = document.createTextNode("\u2713");
+    button2.className = "Spunta";
+    button2.appendChild(txt2);  */
+

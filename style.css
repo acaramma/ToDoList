@@ -18,8 +18,9 @@
   font-size: 25px;
 }
 
-.li{
+.task{
   font-size: 30px;
+  width: max-content;
 }
 
 .Aggiungi {
