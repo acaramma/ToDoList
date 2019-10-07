@@ -2,8 +2,8 @@
 var lista_nodi = document.getElementsByTagName("li");
 for (var i = 0; i < lista_nodi.length; i++) {
   var div_chiudi = document.createElement("div");                     //ho aggiunto 
-  div_chiudi.className = "div_chiudi";                                       //queste 2
-  document.getElementById("Lista").appendChild(div);                  //assd
+  div_chiudi.className = "div_chiudi";                                //queste 
+  document.getElementById("Lista").appendChild(div);                  //3
   var button = document.createElement("button");
   var txt = document.createTextNode("\u00D7");
   button.className = "Chiudi";
@@ -21,7 +21,7 @@ var chiudi = document.getElementsByClassName("Chiudi");
 for (var i = 0; i < chiudi.length; i++) {
   chiudi[i].onclick = function() {
     var div = this.parentElement;
-    item.parentNode.removeChild(item);
+    div.parentNode.removeChild(div);
   }
 }
 
@@ -38,7 +38,6 @@ function aggiungi() {
   }
  	document.getElementById("input").value = "";			
 
-
   var button = document.createElement("button");
   var txt = document.createTextNode("\u00D7");
   button.className = "Chiudi";
@@ -51,10 +50,11 @@ function aggiungi() {
   button2.appendChild(txt2);
   li.appendChild(button2);
 
-  for (i = 0; i < chiudi.length; i++) {
+  for (var i = 0; i < chiudi.length; i++) {
     chiudi[i].onclick = function() {
       var div = this.parentElement;
-      item.parentNode.removeChild(div);
+      div.parentNode.removeChild(div);
     }
   }
+
 }
