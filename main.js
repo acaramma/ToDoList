@@ -15,22 +15,19 @@ function aggiungi() {
 
   //crea task, bottone chiudi e spunta
   var testo_input = document.getElementById("input").value;
-  var task = "<span>" + testo_input + "</span>";
   document.getElementById('input').value = "";
-  
-  var chiudi_bottone = "<button id='Chiudi' onclick='rimuovi()'>\u00D7</button>";
-  var spunta = "<button id='Spunta'>\u2713</button>";
-  div.innerHTML = task + "<div>" + chiudi_bottone + spunta + "</div>";
+
+  var bottoni ="<span id='text'>";
+  bottoni += testo_input;
+  bottoni += "</span><div class='button'><button id='Chiudi' onclick='rimuovi()'>\u00D7</button><button id='Spunta' onclick='spuntato()'>\u2713</button></div>"
+  div.innerHTML = bottoni;
 }
 
 function rimuovi(){
-
+  var canc = document.getElementsByClassName("task")[0];
+  canc.remove();
 }
 
-/*
-var divbtn = document.createElement("div");
-  divbtn.className = "btn_div";
-  divbtn.innerHTML = document.getElementById("input").value;
-  var divtask = document.getElementsByClassName("task");
-  divtask.appendChild(divbtn);
- divbtn.innerHTML = chiudi_bottone + spunta;*/
+function spuntato(){
+  document.getElementById("text").style.textDecoration = "line-through";
+}
