@@ -1,65 +1,111 @@
-#container{
-  width: 100%;
-  height: 100%;
+@import url('https://fonts.googleapis.com/css?family=Artifika&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bad+Script');
+
+#container {
+  box-sizing: border-box;
+  width: max-content;
+  height: 50%;
+  padding: 10px;
+  border: 0;
+  margin: 0 auto;
+  background: #ECF0F1;
+  border-top: 5px solid #7F8C8D;
+  box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, .5);
+  font-family: 'Artifika', serif;
+  font-size: 18px;
 }
 
-.titolo{
+.titolo {
+  padding: 20px;
+  background: #ECECEC;
   text-align: center;
+  border-color: black;
+  border-style: double;
+  color: #7F8C8D;
+  font-family: 'Bad Script', cursive;
+  margin-bottom: 0px;
 }
 
-.sottotitolo{
+.sottotitolo {
   margin: 10px;
   font-size: 25px;
 }
 
 #input {
-  margin: 10px;
   width: max-content;
   font-size: 25px;
+  background: transparent;
+  border: none;
+  font-family: 'Artifika', serif;
 }
 
-.task{
+#task {
   display: flex;
   justify-content: space-between;
   font-size: 30px;
-}
-
-.Aggiungi {
-  background: #d9d9d9;
-  width: 250px;
-  height: 50px;
-  text-align: center;
-  font-size: 40px;
-  cursor: pointer;
 }
 
 .testo_utente {
   display: flex;
   justify-content: space-between;
+  font-family: 'Artifika', serif;
   padding: 10px;
   font-size: 20px;
-  border: 3px;
-  border-color: black;
 }
 
-#text{
+#text {
   margin: 10px;
+  font-family: 'Artifika', serif;
   word-wrap: break-word;
-  width: 500px;
+  width: 75%;
+  padding: 20px;
+  border-top: 2px solid rgb(200,200,200);
+  border-top-style: dashed;
+  transition: all 1s;
 }
 
-#Chiudi{
+.testo_lista {
+  margin: 10px;
+  font-size: 20px;
+  font-family: 'Artifika', serif;
+}
+
+/* bottoni */
+.Aggiungi {
+  display: block;
+  background: #D9D9D9;
+  width: 250px;
+  height: 50px;
+  text-align: center;
+  font-size: 35px;
+  cursor: pointer;
+  border-color: black;
+  border-style: double;
+}
+
+.Aggiungi:hover {
+  background-color: #FFFFFF;
+  transition: all .5s;
+}
+
+#Chiudi {
+  background: transparent;
+  border: none;
+  color: #7F8C8D;
+  cursor: pointer;
   font-size: 30px;
 }
 
 #Chiudi:hover {
   background-color: red;
-  color: white;
   cursor: pointer;
 }
 
-#Spunta{
-  margin-left: 30px;
+#Spunta {
+  background: transparent;
+  border: none;
+  color: #7F8C8D;
+  cursor: pointer;
   font-size: 30px;
 }
 
@@ -67,8 +113,4 @@
   background-color: green;
   color: white;
   cursor: pointer;
-}
-
-.testo_lista{
-  margin: 10px;
 }

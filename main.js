@@ -1,14 +1,7 @@
-/*
-  var chiudi = document.getElementsByClassName("Chiudi");
-  for (var i = 0; i < chiudi.length; i++) {
-  chiudi[i].onclick = function() {
-  var div = this.parentElement;
-  div.parentNode.removeChild(div);
-*/
 function aggiungi() {
   //crea div task
   var div = document.createElement("div");
-  div.className = "task";
+  div.setAttribute("id", "task");
   div.innerHTML = document.getElementById("input").value;
   var container = document.getElementById("container");
   container.appendChild(div);
@@ -19,15 +12,19 @@ function aggiungi() {
 
   var bottoni ="<span id='text'>";
   bottoni += testo_input;
-  bottoni += "</span><div class='button'><button id='Chiudi' onclick='rimuovi()'>\u00D7</button><button id='Spunta' onclick='spuntato()'>\u2713</button></div>"
+  bottoni += "</span><div class='button'><button id='Chiudi' onclick='rimuovi()'>&#128465;</button><button id='Spunta' onclick='spuntato()'>\u2713</button></div>"
   div.innerHTML = bottoni;
 }
 
 function rimuovi(){
-  var canc = document.getElementsByClassName("task")[0];
-  canc.remove();
+  var canc = document.getElementById("task");
+  canc.parentNode.removeChild(canc);
 }
 
-function spuntato(){
-  document.getElementById("text").style.textDecoration = "line-through";
+function spuntato(){  
+  if(document.getElementById("text").style.textDecoration == "line-through"){
+    document.getElementById("text").style.textDecoration = "none";
+  }else{
+    document.getElementById("text").style.textDecoration = "line-through";
+  }
 }
