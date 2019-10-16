@@ -53,7 +53,7 @@
   font-size: 20px;
 }
 
-.text {
+#text {
   margin: 10px;
   font-family: 'Artifika', serif;
   word-wrap: break-word;
