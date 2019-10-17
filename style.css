@@ -1,6 +1,8 @@
+/*fonts*/
 @import url('https://fonts.googleapis.com/css?family=Artifika&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Bad+Script');
 
+/*div container*/
 #container {
   box-sizing: border-box;
   width: max-content;
@@ -15,6 +17,7 @@
   font-size: 18px;
 }
 
+/* todo list */
 .titolo {
   padding: 20px;
   background: #ECECEC;
@@ -26,11 +29,13 @@
   margin-bottom: 0px;
 }
 
+/* inserisci una task*/
 .sottotitolo {
   margin: 10px;
   font-size: 25px;
 }
 
+/*aggiungi*/
 #input {
   width: max-content;
   font-size: 25px;
@@ -39,12 +44,14 @@
   font-family: 'Artifika', serif;
 }
 
+/*div task*/
 .task {
   display: flex;
   justify-content: space-between;
   font-size: 30px;
 }
 
+/*input testo e tasto aggiungi*/
 .testo_utente {
   display: flex;
   justify-content: space-between;
@@ -53,6 +60,7 @@
   font-size: 20px;
 }
 
+/*input testo*/
 .text {
   margin: 10px;
   font-family: 'Artifika', serif;
@@ -64,13 +72,14 @@
   transition: all 1s;
 }
 
+/*lista di task*/
 .testo_lista {
   margin: 10px;
   font-size: 20px;
   font-family: 'Artifika', serif;
 }
 
-/* bottoni */
+/* aggiungi */
 .Aggiungi {
   display: block;
   background: #D9D9D9;
@@ -88,6 +97,7 @@
   transition: all .5s;
 }
 
+/*chiudi*/
 .Chiudi {
   background: transparent;
   border: none;

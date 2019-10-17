@@ -1,4 +1,3 @@
-var numtask = 0;
 function aggiungi() {
   //crea div task
   var div = document.createElement("div");
@@ -6,9 +5,8 @@ function aggiungi() {
   div.innerHTML = document.getElementById("input").value;
   var compiti = document.getElementById("compiti");
   compiti.appendChild(div);
-  numtask++;
 
-  //crea task, bottone chiudi e spunta
+  //crea task, bottone chiudi
   var testo_input = document.getElementById("input").value;
   document.getElementById("input").value = "";
 
