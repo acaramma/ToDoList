@@ -1,5 +1,4 @@
 var numtask = 0;
-
 function aggiungi() {
   //crea div task
   var div = document.createElement("div");
@@ -13,16 +12,22 @@ function aggiungi() {
   var testo_input = document.getElementById("input").value;
   document.getElementById("input").value = "";
 
-  var string ="<span id='text' style='text-decoration:none'>";
+  var string ="<span class='text' style='text-decoration:none'>";
   string += testo_input;
-  string += "</span><div class='bottone'><button class='Chiudi' onclick='elimina()'>&#128465;</button><button id='Spunta' onclick='barrato()'>&check;</button></div>";
+  string += "</span><button class='Chiudi' onclick='elimina()'>&#128465;</button>";
   div.innerHTML = string;
+
+  //clicca sul testo per barrarlo
+  $(".text").click(function(){
+    $(this).css("text-decoration", "line-through");
+  });
 }
 
-function barrato(){
+/*function elimina(){
+  var button = document.getElementsByClassName('Chiudi');
+  for(var i = 0; i < numtask; i++){
+    button[i].onclick = function(){ 
 
-}
-
-function elimina(){
-
-}
+    };
+  }
+}*/
