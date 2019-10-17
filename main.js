@@ -22,4 +22,8 @@ function aggiungi() {
     $(this).css("text-decoration", "line-through");
   });
 
+  //clicca per cancellare
+  $(".Chiudi").click(function(){
+    $(this).parent().remove();
+  });
 }
