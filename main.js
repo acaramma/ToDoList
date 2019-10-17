@@ -14,20 +14,12 @@ function aggiungi() {
 
   var string ="<span class='text' style='text-decoration:none'>";
   string += testo_input;
-  string += "</span><button class='Chiudi' onclick='elimina()'>&#128465;</button>";
+  string += "</span><button class='Chiudi'>&#128465;</button>";
   div.innerHTML = string;
 
   //clicca sul testo per barrarlo
   $(".text").click(function(){
     $(this).css("text-decoration", "line-through");
   });
+
 }
-
-/*function elimina(){
-  var button = document.getElementsByClassName('Chiudi');
-  for(var i = 0; i < numtask; i++){
-    button[i].onclick = function(){ 
-
-    };
-  }
-}*/
