@@ -1,11 +1,14 @@
+let numtask = 0;
+
 function aggiungi() {
   //crea div task
   var div = document.createElement("div");
   div.className = "task";
   //div.setAttribute("id", "task");
   div.innerHTML = document.getElementById("input").value;
-  var container = document.getElementById("container");
-  container.appendChild(div);
+  var compiti = document.getElementById("compiti");
+  compiti.appendChild(div);
+  numtask++;
 
   //crea task, bottone chiudi e spunta
   let testo_input = document.getElementById("input").value;
@@ -13,7 +16,7 @@ function aggiungi() {
 
   let bottoni ="<span id='text'>";
   bottoni += testo_input;
-  bottoni += "</span><div class='bottone'><button id='Chiudi' onclick='rimuovi()'>&#128465;</button><button id='Spunta' onclick='spuntato()'>\u2713</button></div>";
+  bottoni += "</span><div class='bottone'><button class='Chiudi' onclick((this.innerText))>&#128465;</button><button class='Spunta' onclick='spuntato()'>\u2713</button></div>";
   div.innerHTML = bottoni;
 }
 
@@ -25,12 +28,7 @@ function spuntato(){
   }
 }
 
-function rimuovi(){
-  var canc = document.getElementsByClassName("task");
-  var button = document.getElementById("Chiudi");
-  button.onclick = function(){
-    for (var i = 0; i < canc.length; i++) {
-      canc[i].parentNode.removeChild(canc[i]);
-    }
-  }
+var div_task = document.getElementById('compiti');
+for (var i = 0; i < numtask; i++) {
+    div_task[i].onclick = spuntato();
 }
