@@ -1,4 +1,5 @@
-function aggiungi() {
+function operazioni() {
+
   //crea div task
   var div = document.createElement("div");
   div.className = "task";
@@ -9,19 +10,30 @@ function aggiungi() {
   //crea task, bottone chiudi
   var testo_input = document.getElementById("input").value;
   document.getElementById("input").value = "";
-
-  var string ="<span class='text' style='text-decoration:none'>";
+  var string = "<span class='text' style='text-decoration:none'>";
   string += testo_input;
   string += "</span><button class='Chiudi'>&#128465;</button>";
   div.innerHTML = string;
 
-  //clicca sul testo per barrarlo
-  $(".text").click(function(){
-    $(this).css("text-decoration", "line-through");
-  });
+  //testo barrato
+  //var parent = document.getElementById("compiti");        
+  for (var i = 0; i < document.getElementsByClassName("text").length; i++) {
+    var text = document.getElementsByClassName("text")[i];
+    text.addEventListener("click", function(){
+      if(this.style.textDecoration === "line-through"){
+        this.style.textDecoration = "none";
+      }else{
+        this.style.textDecoration = "line-through";
+      }
+    });
+  }
 
-  //clicca per cancellare
-  $(".Chiudi").click(function(){
-    $(this).parent().remove();
-  });
+  //cancella div task
+  //var parent = document.getElementById("compiti");
+  for (var i = 0; i < document.getElementsByClassName("Chiudi").length; i++) {
+    var button = document.getElementsByClassName("Chiudi")[i];
+    button.addEventListener("click", function(){
+      this.parentElement.remove();
+    });
+  }
 }
