@@ -19,7 +19,6 @@ function operazioni() {
   for(let i = 0; i < document.getElementsByClassName("text").length; i++){
     let text = document.getElementsByClassName("text")[i];
     text.onclick = function(){
-    //text.addEventListener("click", function(){
       this.style.textDecoration === "line-through" ? this.style.textDecoration = "none" : this.style.textDecoration = "line-through"
     }
   }
