@@ -1,11 +1,10 @@
 function operazioni() {
-
   //crea div task
   let div = document.createElement("div");
   div.className = "task";
   div.innerHTML = document.getElementById("input").value;
   let compiti = document.getElementById("compiti");
-  compiti.appendChild(div);
+  compiti.appendChild(div);                                                                     //aggiunge un nodo alla fine della lista dei figli di un nodo padre
 
   //crea task, bottone chiudi
   let testo_input = document.getElementById("input").value;
@@ -13,21 +12,23 @@ function operazioni() {
   let string = "<span class='text' style='text-decoration:none'>";
   string += testo_input;
   string += "</span><button class='Chiudi'>&#128465;</button>";
-  div.innerHTML = string;
+  div.innerHTML = string;                                                                       //imposta il contenuto html all'interno dell'elemento
 
   //testo barrato
-  for(let i = 0; i < document.getElementsByClassName("text").length; i++){
+  let numtask = document.getElementsByClassName("text").length;
+  for(let i = 0; i < numtask; i++){
     let text = document.getElementsByClassName("text")[i];
-    text.onclick = function(){
+    text.onclick = function(){                                                                  //onclick = sovrascrive gli eventi esistenti
       this.style.textDecoration === "line-through" ? this.style.textDecoration = "none" : this.style.textDecoration = "line-through"
     }
   }
 
   //cancella div task
-  for (let i = 0; i < document.getElementsByClassName("Chiudi").length; i++) {
+  numtask = document.getElementsByClassName("Chiudi").length;
+  for (let i = 0; i < numtask; i++) {
     let button = document.getElementsByClassName("Chiudi")[i];
     button.addEventListener("click", function(){
-      this.parentElement.remove();
+      this.parentElement.remove();                                                              //rimuove il padre dell'evento click
     });
   }
 }
